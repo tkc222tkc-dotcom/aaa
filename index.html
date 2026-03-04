@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Club App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>🎵 Music Club App</h1>
+      <p class="subtitle">音楽再生 + 部活運営をまとめたオールインワンMVP</p>
+
+      <section class="panel">
+        <h2>プレイヤー</h2>
+        <label class="file-label">
+          曲を追加
+          <input id="fileInput" type="file" accept="audio/*" multiple />
+        </label>
+
+        <ul id="playlist" class="playlist"></ul>
+
+        <div class="now-playing">再生中: <span id="nowPlaying">未選択</span></div>
+
+        <div class="buttons">
+          <button id="prevBtn">⏮ 前へ</button>
+          <button id="playPauseBtn">▶ 再生</button>
+          <button id="nextBtn">次へ ⏭</button>
+        </div>
+
+        <div class="seek">
+          <span id="currentTime">0:00</span>
+          <input id="seekBar" type="range" min="0" max="100" value="0" />
+          <span id="duration">0:00</span>
+        </div>
+
+        <div class="volume">
+          <label for="volumeBar">音量</label>
+          <input id="volumeBar" type="range" min="0" max="1" step="0.01" value="1" />
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>部活向け30機能</h2>
+        <p class="subtitle">各機能の入力内容はブラウザに自動保存されます。</p>
+        <div id="featureGrid" class="feature-grid"></div>
+      </section>
+
+      <audio id="audioPlayer"></audio>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
